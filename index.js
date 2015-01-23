@@ -1,4 +1,5 @@
-var config = require('./config'),
+var env = process.env.NODE_ENV || 'development',
+  config = require('./config')[env],
   app = require('./app')(config);
 
 app.listen(config.port, function() {
